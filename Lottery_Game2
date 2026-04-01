@@ -1,0 +1,43 @@
+public class Lottery_Game2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int n = 87;
+		if (n >= 100 && n <= 200) {
+			System.out.println("Bike");
+			if (n < 150) {
+				System.out.println("Hero");
+			} else {
+				System.out.println("TVS");
+			}
+
+		} else if (n >= 282 && n <= 473) {
+			System.out.println("Macbook");
+			if (n < 311) {
+				System.out.println("M1 Mac");
+			} else {
+				System.out.println("M2 Mac");
+			}
+
+		} else if (n >= 50 && n <= 93) {
+			System.out.println("Cycle");
+			if (n < 77) {
+				System.out.println("Avon Cycle");
+			} else {
+				System.out.println("ATLS Cycle");
+			}
+
+		} else if (n >= 789 && n <= 989) {
+			System.out.println("Kurkure");
+			if (n < 800) {
+				System.out.println("Chilli Kurkure");
+			} else {
+				System.out.println("Normal Kurkure");
+			}
+
+		} else {
+			System.out.println("Better luck  next timex");
+		}
+
+	}
+}
