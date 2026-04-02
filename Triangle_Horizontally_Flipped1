@@ -1,0 +1,18 @@
+import java.util.*;
+public class Triangle_Horizontally_Flipped1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+	    int a = n;//No. of stars printed in each lines 
+		for(int i=1; i<=n; i++) {
+			for(int j=1; j<=a; j++) {
+				System.out.print("* ");
+			}
+			a--;
+			System.out.println();
+		}
+	}
+
+}

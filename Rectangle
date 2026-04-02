@@ -1,0 +1,18 @@
+import java.util.*;
+public class Rectangle {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		for(int i = 1; i <= n; i++) { //kitne line hogi(Row)
+			for(int j = 1; j <= m; j++) { //har line me kitne * print honge(column)
+				
+			System.out.print("* ");
+		}
+		System.out.println();
+	}
+
+}
+} 
