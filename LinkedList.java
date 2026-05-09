@@ -1,12 +1,11 @@
-package Lec27;
+package Lec32;
 
-public class LinkedList {
-
+public class LinkedList<T> {
 	private class Node {
-		int val;
+		T val;
 		Node next;
 
-		public Node(int val) {
+		public Node(T val) {
 			// TODO Auto-generated constructor stub
 			this.val = val;
 		}
@@ -17,7 +16,7 @@ public class LinkedList {
 	private int size;
 
 	// O(1)
-	public void AddFirst(int item) {
+	public void AddFirst(T item) {
 		Node nn = new Node(item);
 		if (size == 0) {
 			head = nn;
@@ -31,7 +30,7 @@ public class LinkedList {
 	}
 
 	// O(1)
-	public void AddLast(int item) {
+	public void AddLast(T item) {
 		if (size == 0) {
 			AddFirst(item);
 		} else {
@@ -43,7 +42,7 @@ public class LinkedList {
 	}
 
 	// O(N)
-	public void AddatIndex(int item, int k) {
+	public void AddatIndex(T item, int k) {
 		if (k == 0) {
 			AddFirst(item);
 		} else if (k == size) {
@@ -83,22 +82,22 @@ public class LinkedList {
 	}
 
 	// O(1)
-	public int getFirst() {
+	public T getFirst() {
 		return head.val;
 	}
 
 	// O(1)
-	public int getLast() {
+	public T getLast() {
 		return tail.val;
 	}
 
 	// O(N)
-	public int getatIndex(int k) {
+	public T getatIndex(int k) {
 		return GetNode(k).val;
 	}
 
 	// O(1)
-	public int removefirst() {
+	public T removefirst() {
 		if (size == 0) {
 			throw new NullPointerException();
 		}
@@ -114,13 +113,14 @@ public class LinkedList {
 		return temp.val;
 
 	}
+
 	// O(N)
-	public int removelast() {
+	public T removelast() {
 		if (size == 1) {
 			return removefirst();
 		} else {
 			Node prev = GetNode(size - 2);
-			int val = tail.val;
+			T val = tail.val;
 			tail = prev;
 			tail.next = null;
 			size--;
@@ -128,22 +128,29 @@ public class LinkedList {
 
 		}
 	}
-	public int removeatIndex(int k) {
-		if(k==0) {
+
+	public T removeatIndex(int k) {
+		if (k == 0) {
 			return removefirst();
-		}
-		else if(k==size-1) {
+		} else if (k == size - 1) {
 			return removelast();
-		}
-		else {
-			Node prev=GetNode(k-1);
-			Node curr=prev.next;
-			prev.next=curr.next;
-			curr.next=null;
+		} else {
+			Node prev = GetNode(k - 1);
+			Node curr = prev.next;
+			prev.next = curr.next;
+			curr.next = null;
 			size--;
 			return curr.val;
 		}
-		
+
+	}
+
+	public static void main(String[] args) {
+		LinkedList<String> ll = new LinkedList<>();
+		ll.AddLast("Ankit");
+		ll.AddLast("Kamlesh");
+		ll.AddLast("Ankita");
+		ll.Display();
 	}
 
 }
